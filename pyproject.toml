@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aapl_pipeline"
+version = "0.1.0"
+description = "Modular research pipeline for a Tuesday open to Thursday open AAPL trading strategy."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Koushik Vennalakanti"}]
+license = {text = "Proprietary"}
+keywords = ["trading", "backtest", "monte-carlo", "research"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "statsmodels>=0.14",
+    "tqdm>=4.65",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "jupyter>=1.0",
+    "ipykernel>=6.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["aapl_pipeline*"]
+exclude = ["notebooks*", "tests*"]
+
+[tool.setuptools.package-data]
+aapl_pipeline = ["py.typed"]
